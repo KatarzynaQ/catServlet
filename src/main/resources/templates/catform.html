@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a cat</title>
+</head>
+<body>
+<form th:action="@{/catform}"method="post">
+    Name: <input type="text"name="name">
+    Color:<input type="text"name="color">
+    Age: <input type="number"name="age">
+    <input type="submit"value="add">
+</form>
+
+<a th:href="@{/catform/allcats}">Show all cats</a>
+
+<form th:action="@{/catform/filterColor}"method="get">
+    Find Cat by color:<input type="text" name="findByColor">
+    <input type="submit"value="find">
+</form>
+</body>
+</html>
